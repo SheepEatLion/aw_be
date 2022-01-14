@@ -1,6 +1,10 @@
 package com.mynameisjunyeong.aw_be.domain.user;
 
 import com.mynameisjunyeong.aw_be.domain.BaseTimeEntity;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,6 +13,9 @@ import javax.persistence.*;
  * @author junyeong
  */
 
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class User extends BaseTimeEntity {
 
