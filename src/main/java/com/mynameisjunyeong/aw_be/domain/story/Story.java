@@ -2,6 +2,7 @@ package com.mynameisjunyeong.aw_be.domain.story;
 
 import com.mynameisjunyeong.aw_be.domain.BaseTimeEntity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import javax.persistence.*;
  */
 
 @Getter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
