@@ -21,15 +21,15 @@ public class BookController {
     private final BookService bookService;
 
     @PostMapping("/")
-    public ResponseEntity create(@RequestBody BookCreateDto bookCreateDto){
+    public ResponseEntity<Object> create(@RequestBody BookCreateDto bookCreateDto){
         try {
             bookService.create(bookCreateDto);
         } catch (ServiceException se){
             log.error(se.getMessage());
-            return new ResponseEntity("비즈니스 로직 에러", HttpStatus.OK);
+            return new ResponseEntity<>("비즈니스 로직 에러", HttpStatus.OK);
         }
 
-        return new ResponseEntity("성공적으로 글을 작성했습니다.", HttpStatus.OK);
+        return new ResponseEntity<>("성공적으로 글을 작성했습니다.", HttpStatus.OK);
     }
 
 }
