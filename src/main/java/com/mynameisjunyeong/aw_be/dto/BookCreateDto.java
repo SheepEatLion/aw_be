@@ -1,11 +1,11 @@
 package com.mynameisjunyeong.aw_be.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class BookCreateDto {
 
