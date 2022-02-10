@@ -33,6 +33,7 @@ dependencies {
 	implementation "com.querydsl:querydsl-apt:${queryDslVersion}" // Querydsl 3
 	implementation 'mysql:mysql-connector-java'	// mysql
 	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
