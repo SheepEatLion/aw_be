@@ -32,6 +32,8 @@ dependencies {
 	implementation "com.querydsl:querydsl-jpa:${queryDslVersion}" // Querydsl 2
 	implementation "com.querydsl:querydsl-apt:${queryDslVersion}" // Querydsl 3
 	implementation 'mysql:mysql-connector-java'	// mysql
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
