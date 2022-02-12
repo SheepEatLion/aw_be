@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class AuthController {
 
+    /*
     private final KakaoAuthService kakaoAuthService;
     private final GoogleAuthService googleAuthService;
     private final AuthTokenProvider authTokenProvider;
     private final AuthService authService;
 
-    /**
-     * KAKAO
-     */
+
     @PostMapping("/kakao")
     public ResponseEntity<AuthResponse> kakaoAuthRequest(@RequestBody AuthRequest authRequest)
-        return ApiResponse.success(kakaoAuthService.login(authRequest));;
+        return ApiResponse.success(kakaoAuthService.login(authRequest));
+    */
 }
