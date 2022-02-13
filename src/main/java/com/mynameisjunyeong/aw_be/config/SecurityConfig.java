@@ -19,6 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(authTokenProvider);
 
         http.authorizeHttpRequests().mvcMatchers("/").permitAll();
+        http.antMatcher("/images/**");
     }
 
 
