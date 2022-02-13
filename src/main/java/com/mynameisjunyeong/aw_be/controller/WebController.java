@@ -12,4 +12,9 @@ public class WebController {
         model.addAttribute("msg", "i blame on you");
         return "/index";
     }
+
+    @GetMapping("/calendar")
+    public String calendar(Model model){
+        return "/calendar";
+    }
 }
