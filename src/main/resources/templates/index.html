@@ -15,14 +15,14 @@
 <div class="d-flex" id="wrapper">
     <!-- Sidebar-->
     <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+        <div class="sidebar-heading border-bottom bg-light"><img id="img-aw" th:src="@{/images/aw.png}" /> 익명의 작가들</div>
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">최근 작품</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">초안</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">베스트작품</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">완결</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">출간 정보</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">아직 오지 않은 소설가에게</a>
         </div>
     </div>
     <!-- Page content wrapper-->
@@ -30,19 +30,19 @@
         <!-- Top navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container-fluid">
-                <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+                <button class="btn btn-primary" id="sidebarToggle">몰입하기</button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                        <li class="nav-item active"><a class="nav-link" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Link</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#!">홈</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">내정보</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">작품활동</a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#!">Action</a>
-                                <a class="dropdown-item" href="#!">Another action</a>
+                                <a class="dropdown-item" href="#!">글쓰기</a>
+                                <a class="dropdown-item" href="#!">내가 참여한 글</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#!">Something else here</a>
+                                <a class="dropdown-item" href="#!">찜한 작품</a>
                             </div>
                         </li>
                     </ul>
@@ -51,17 +51,28 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-            <h1 class="mt-4">Simple Sidebar</h1>
-            <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-            <p>
-                Make sure to keep all page content within the
-                <code>#page-content-wrapper</code>
-                . The top navbar is optional, and just for demonstration. Just create an element with the
-                <code>#sidebarToggle</code>
-                ID which will toggle the menu when clicked.
-            </p>
+            <h1 class="mt-4">아직 오지 않은 소설가에게..</h1>
+            <div> 익명의 작가들에 오신 걸 환영합니다!</div>
+            <div> 당신은 책을 즐겨 읽나요? </div>
+            <div>작가 <strong>Toni Morrison</strong>은 이런 말을 남겼습니다.</div>
+            <p>"당신이 정말로 읽고 싶은 책이 있는데, 아직 그런 책이 없다면 당신이 <strong>직접</strong> 써야 한다."</p>
+            <div>
+                좋아하는 책의 한 구절을 적어도 좋고, 당신이 왜 글쓰기를 좋아하는지 그 이유를 적어도 좋아요.</div>
+            <p>당신의 표현으로 아직 오지 않은 소설가들에게 하고 싶은 말을 적어보세요!</p>
+
+            <div><strong>한가지 더!</strong></div>
+            <div>우리는 특별한 규칙을 만들었어요.</div>
+            <div>바로 <strong>글자 수 제한</strong>입니다.</div>
+            <div>모든 글에는 글의 서론을 열어준 글쓴이가 정해둔 제한이 있어요.</div>
+                그에 맞게 표현을 함축하거나 늘려서 글을 작성해주세요!
         </div>
+        <p style="padding:100px;"></p>
+        <form action="#" method="get" style="width:300px;height:100px;">
+            <textarea id="txt-write" name="txt-write" autofocus maxlength="500"></textarea>
+            <input id="btn-write" type="submit" value="완료">
+        </form>
     </div>
+
 </div>
 <!-- Bootstrap core JS-->
 <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js}"></script>
