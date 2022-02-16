@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <!-- Top navigation-->
+    <nav th:fragment="nav-bar" class="navbar navbar-expand-lg navbar-light bg-light border-bottom" >
+        <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">몰입하기</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                    <li class="nav-item active"><a class="nav-link" href="/anonymous-writer/">공지사항</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/anonymous-writer/calendar">집필기록</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">작품활동</a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#!">찜한 작품</a>
+                            <a class="dropdown-item" href="#!">내가 참여한 글</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#!">로그아웃</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <!-- Sidebar-->
+    <div th:fragment="side-bar" class="border-end bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light" title="참을 수 없는 존재의 가벼움">익명의 작가들</div>
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/anonymous-writer/recent-work" title="불복종에 관하여"> <img class="img-aw" th:src="@{/images/clock.png}" /> 최근작품</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/anonymous-writer/start-work" title="위대한 개츠비"> <img class="img-aw" th:src="@{/images/draft.png}" /> 초안작성</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/anonymous-writer/best-work" title="아내를 모자로 착각한 남자"> <img class="img-aw" th:src="@{/images/trophy.png}" /> 인기작품</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/anonymous-writer/finish-work" title="그리고 아무도 없었다"> <img class="img-aw" th:src="@{/images/finish.png}" /> 완결작품</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/anonymous-writer/publish-info" title="바스커빌 가의 개"> <img class="img-aw" th:src="@{/images/book.png}" /> 출간정보</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/anonymous-writer/not-coming" title="브이 포 벤데타">아직 오지 않은 소설가에게</a>
+        </div>
+    </div>
+
+</html>
