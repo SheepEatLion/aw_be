@@ -56,9 +56,6 @@
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
-  --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
@@ -76,11 +73,13 @@
   }
 }
 
+
+
+
 body {
   margin: 0;
-  font-family: var(--bs-body-font-family);
-  font-size: var(--bs-body-font-size);
-  font-weight: var(--bs-body-font-weight);
+  font-family: 'Noto Serif KR', serif;
+
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
@@ -11327,14 +11326,30 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     height:100%;
 }
 
-#img-aw{
-    width:30px;
-    height:30px;
+.img-aw{
+    width:40px;
+    height:40px;
 }
 
+.img-pen{
+    width:50px;
+    height:50px;
+}
 
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+.write{
+    padding-left:50px;
+    width:100%;
+    height:300px;
+    background-color:transparent;
+    resize:none;
+}
 
-.nanumgothic * {
- font-family: 'Nanum Gothic', sans-serif;
+.media .avatar {
+    width: 64px;
+}
+.shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
 }
