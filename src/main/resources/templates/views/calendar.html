@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<!-- 고유 스크립트 -->
+<th:block layout:fragment="custom-js">
+    <script th:src="@{/js/calendar.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</th:block>
+
+<!-- 컨텐츠 -->
+<th:block layout:fragment="content">
+    <div id="calendar" ></div>
+</th:block>
+
+</body>
+</html>
