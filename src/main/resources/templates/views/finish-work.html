@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head> </head>
+<body>
+<!-- 컨텐츠 -->
+<th:block layout:fragment="content">
+    <h1 class="mt-4">완결 작품</h1>
+    <p></p>
+    <div> 익명의 작가들에 오신 걸 환영합니다!</div>
+
+</th:block>
+
+<!-- 고유 스크립트 -->
+<th:block layout:fragment="custom-js">
+    <script th:src="@{/js/index.js}"></script>
+</th:block>
+</body>
+</html>

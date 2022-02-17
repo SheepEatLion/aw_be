@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head> </head>
+<body>
+<!-- 컨텐츠 -->
+<th:block layout:fragment="content">
+    <h4 class="mt-4"> 운수 좋은 날 </h4>
+    <div>| <code>참여인원: 7</code> | <code>장르: 사실주의 단편</code> | <code>글자 수 제한: 300자</code> |</div>
+    <hr>
+
+    <!-- 테스트 자료 -->
+    <div class="media">
+        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp"
+             alt="Avatar">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">Anna Smith</h5>
+            새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리는 날이었다.<br>
+            이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만에도 닥친 운수 좋은 날이었다 . <br>
+            문안에(거기도 문밖은 아니지만) 들어간답시는 앞집 마마님을 전찻길까지 모셔다 드린 것을 비롯으로
+            행여나 손님이 있을까 하고 정류장에서 어정어정하며 내리는 사람 하나하나에게 거의 비는 듯한 눈결을
+            보내고 있다가 마침내 교원인 듯한 양복쟁이를 동광학교(東光學校)까지 태워다 주기로 되었다.
+        </div>
+    </div>
+    <hr>
+    <div class="media">
+        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.webp"
+             alt="Avatar">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">Caroline Horwitz</h5>
+            그야말로 재수가 옴붙어서 근 열흘 동안 돈 구경도 못한 김첨지는 십 전짜리 백동화 서 푼, 또는 다섯 푼이 찰깍 하고 손바닥에 떨어질 제 거의 눈물을 흘릴 만큼 기뻤었다.<br>
+            더구나 이날 이때에 이 팔십 전이라는 돈이 그에게 얼마나 유용한지 몰랐다.<br>
+            컬컬한 목에 모주 한 잔도 적실 수 있거니와 그보다도 앓는 아내에게 설렁탕 한 그릇도 사다 줄 수 있음이다.
+        </div>
+    </div>
+    <hr>
+    <div class="media mt-3 shadow-textarea">
+        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.webp"
+             alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">Danny Tatuum</h5>
+            <div class="form-group basic-textarea rounded-corners">
+                <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" placeholder="Write your comment..."></textarea>
+            </div>
+        </div>
+        <br>
+        <button>작성완료</button>
+    </div>
+
+</th:block>
+
+<!-- 고유 스크립트 -->
+<th:block layout:fragment="custom-js">
+    <script th:src="@{/js/index.js}"></script>
+</th:block>
+</body>
+</html>
