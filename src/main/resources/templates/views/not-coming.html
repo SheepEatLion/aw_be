@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head> </head>
+<body>
+<!-- 컨텐츠 -->
+<th:block layout:fragment="content">
+    <h1 class="mt-4">아직 오지 않은 소설가에게</h1>
+    <p></p>
+    <div> 익명의 작가들에 오신 걸 환영합니다!</div>hardware
+    <div> 당신은 책을 즐겨 읽나요? </div>
+    <div>작가 <strong>Ernest Hemingway</strong>의 <strong>노인과 바다</strong>에는 이런 문장이 있습니다.</div>
+    <p>"인간은 패배하도록 창조된 게 아니야. 파멸당할 수 있을지는 몰라도 패배할 수는 없어." </p>
+    <div> 저는 좋아하는 책의 문장을 보면 며칠동안 그 문장에 빠져있곤 합니다.</div>
+    <p> 동시에 그 책에 더욱 관심을 갖게되죠.</p>
+    <div>
+        이 곳에서는 좋아하는 작가의 한마디, 또는 좋아하는 책의 한 구절을 적어보세요!</div>
+    <p>마음에 와닿는 문장으로 아직 오지 않은 소설가들을 초대합시다:)</p>
+
+    <hr>
+    <div class="media">
+        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp"
+             alt="Avatar">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">Anna Smith</h5>
+            네 장미꽃을 그렇게 소중하게 만든 것은, 그 꽃을 위해 네가 소비한 시간이란다.
+        </div>
+    </div>
+    <hr>
+    <div class="media">
+        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.webp"
+             alt="Avatar">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">Caroline Horwitz</h5>
+            모든 문서의 초안은 끔찍하다. 글 쓰는 데에는 죽치고 앉아서 쓰는 수 밖에 없다.
+        </div>
+    </div>
+    <hr>
+    <div class="media mt-3 shadow-textarea">
+        <img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.webp"
+             alt="Generic placeholder image">
+        <div class="media-body">
+            <h5 class="mt-0 font-weight-bold blue-text">Danny Tatuum</h5>
+            <div class="form-group basic-textarea rounded-corners">
+                <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="3" placeholder="Write your comment..."></textarea>
+            </div>
+        </div>
+        <br>
+        <button>작성완료</button>
+    </div>
+
+</th:block>
+
+<!-- 고유 스크립트 -->
+<th:block layout:fragment="custom-js">
+    <script th:src="@{/js/index.js}"></script>
+</th:block>
+</body>
+</html>
