@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/defaultLayout}">
+<head> </head>
+<body>
+<!-- 컨텐츠 -->
+<th:block layout:fragment="content">
+    <!--<h1 class="mt-4">최근 작품</h1>-->
+
+    <h4 class="mt-4"> 운수 좋은 날 (7) </h4>
+    <div> 새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리었다. 이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김 첨지에게는 오래간만에도 닥친 운수 좋은 날이었다.</div>
+    <hr>
+    <h4> 날개 (4) </h4>
+    <div> 박제가 되어버린 천재를 아시오? 나는 유쾌하오. 이럴 땐 연애까지가 유쾌하오.</div>
+    <hr>
+    <h4> 아홉살 인생 (21) </h4>
+    <div> 나는 태어날까 말까를 내 스스로 궁리한 끝에 태어나지는 않았다.</div>
+    <hr>
+    <h4> 오만과 편견 (1) </h4>
+    <div> 꽤 재산을 가진 미혼남이 틀림없이 아내를 원하리라는 것은 널리 인정받는 진리다.</div>
+    <hr>
+    <h4> 모르그 가의 살인 사건 (195) </h4>
+    <div> 분석적이라고 불리는 정신적 특징은 그 자체만으로는 거의 분석할 수 없다.</div>
+    <hr>
+
+
+</th:block>
+
+<!-- 고유 스크립트 -->
+<th:block layout:fragment="custom-js">
+    <script th:src="@{/js/index.js}"></script>
+</th:block>
+</body>
+</html>
