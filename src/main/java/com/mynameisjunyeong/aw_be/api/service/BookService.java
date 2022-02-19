@@ -1,11 +1,11 @@
-package com.mynameisjunyeong.aw_be.service;
+package com.mynameisjunyeong.aw_be.api.service;
 
-import com.mynameisjunyeong.aw_be.domain.post.Post;
-import com.mynameisjunyeong.aw_be.domain.post.PostRepository;
-import com.mynameisjunyeong.aw_be.domain.post.PostRepositorySupport;
-import com.mynameisjunyeong.aw_be.domain.story.Story;
-import com.mynameisjunyeong.aw_be.domain.story.StoryRepository;
-import com.mynameisjunyeong.aw_be.domain.story.StoryRepositorySupport;
+import com.mynameisjunyeong.aw_be.api.domain.post.Post;
+import com.mynameisjunyeong.aw_be.api.domain.post.PostRepository;
+import com.mynameisjunyeong.aw_be.api.domain.post.PostRepositorySupport;
+import com.mynameisjunyeong.aw_be.api.domain.story.Story;
+import com.mynameisjunyeong.aw_be.api.domain.story.StoryRepository;
+import com.mynameisjunyeong.aw_be.api.domain.story.StoryRepositorySupport;
 import com.mynameisjunyeong.aw_be.dto.BookCreateDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
