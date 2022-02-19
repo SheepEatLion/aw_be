@@ -1,8 +1,6 @@
-package com.mynameisjunyeong.aw_be.domain.post;
+package com.mynameisjunyeong.aw_be.api.domain.post;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
