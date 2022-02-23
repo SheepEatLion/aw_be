@@ -1,18 +1,29 @@
 package com.mynameisjunyeong.aw_be.web.controller;
 
+import com.mynameisjunyeong.aw_be.dto.SessionUser;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
+@RequiredArgsConstructor
 @RequestMapping("/anonymous-writer")
 @Controller
 public class WebController {
 
+    private final HttpSession httpSession;
+
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("msg", "i blame on you");
-        return "/index";
+
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if(user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+        return "/login";
     }
 
     @GetMapping("/calendar")
