@@ -2,13 +2,10 @@ package com.mynameisjunyeong.aw_be.api.domain.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mynameisjunyeong.aw_be.api.domain.BaseTimeEntity;
-import com.mynameisjunyeong.aw_be.oauth.entity.ProviderType;
 import com.mynameisjunyeong.aw_be.oauth.entity.RoleType;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  * User Entity
