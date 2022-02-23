@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>익명의 작가들</title>
+</head>
+<body>
+    <!-- Header-->
+    <header class="masthead d-flex align-items-center">
+        <div class="container px-4 px-lg-5 text-center">
+            <img th:src="@{/images/aw.png}" width="50" height="50">
+            <h1 class="mb-1"> 익명의 작가들 </h1>
+            <h3 class="mb-5">글을 쓰고 싶다면 종이와 펜 혹은 컴퓨터, 그리고 약간의 배짱만 있으면 된다.</h3>
+            <p>ID: <input type="text"></p>
+            <p>PW: <input type="text"></p>
+            <button> 로그인 </button>
+            <button> 회원가입 </button>
+            <span th:if="${userName}">userName</span>
+            <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+            <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+        </div>
+    </header>
+
+</body>
+</html>
