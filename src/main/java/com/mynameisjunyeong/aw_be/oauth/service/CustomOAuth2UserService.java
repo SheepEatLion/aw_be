@@ -2,6 +2,8 @@ package com.mynameisjunyeong.aw_be.oauth.service;
 
 import com.mynameisjunyeong.aw_be.api.domain.user.User;
 import com.mynameisjunyeong.aw_be.api.domain.user.UserRepository;
+import com.mynameisjunyeong.aw_be.dto.OAuthAttributes;
+import com.mynameisjunyeong.aw_be.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -39,17 +41,13 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
         return new DefaultOAuth2User(
                 Collections.singleton(
                         new SimpleGrantedAuthority(
-                                user.getRoleType().getKey(),
+                                user.getRoleKey())),
                                 attributes.getAttributes(),
-                                attributes.getNameAttributeKey()
-                        )
-                )
-        );
-
+                                attributes.getNameAttributeKey());
     }
 
     private User saveOrUpdate(OAuthAttributes attributes) {
-        User user = userRepository.findByEmail(attributes.getEmail()).map(entity -> entity.update(attributes.getName(), attributes.getPicture)).orElse(attributes.toEntity());
+        User user = userRepository.findByEmail(attributes.getEmail()).map(entity -> entity.update(attributes.getName(), attributes.getPicture())).orElse(attributes.toEntity());
         return userRepository.save(user);
     }
 }
