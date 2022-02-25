@@ -22,9 +22,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable() // h2-console up
         .and()
                 .authorizeRequests()    // URL 별로 권한 관리를 설정하는 옵션의 시작점, 선언 되어 있어야만 antMatchers 옵션 사용 가능.
-                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
-                .antMatchers("/api/v1/**").hasRole(RoleType.USER.getKey())  // user 권한 사람들만 열람 가능
-                .anyRequest().authenticated()   // 설정된 값 이외 나머지 URL들은 로그인한 사용자들만 허용
+                //.antMatchers("/**").permitAll()
+                //.antMatchers("/api/v1/**").hasRole(RoleType.USER.name())  // user 권한 사람들만 열람 가능
+                //.anyRequest().authenticated()   // 설정된 값 이외 나머지 URL들은 로그인한 사용자들만 허용
         .and()
                 .logout()
                 .logoutSuccessUrl("/")  // 로그아웃 성공시 홈으로 이동

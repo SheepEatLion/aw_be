@@ -31,12 +31,12 @@ public class BookService {
                 .build();
         postRepository.save(post);
 
-        Long postId = postRepositorySupport.findPostId(post.getAuthor(), post.getCreatedDate(), post.getGenre());
+        Long postSeq = postRepositorySupport.findPostId(post.getAuthor(), post.getCreatedDate(), post.getGenre());
 
         Story story = Story.builder()
                 .author(post.getAuthor())
                 .contents(bookCreateDto.getContents())
-                .postId(postId)
+                .postSeq(postSeq)
                 .build();
         storyRepository.save(story);
     }
