@@ -1,12 +1,17 @@
 package com.mynameisjunyeong.aw_be.api.domain.user;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UserRepositorySupport extends QuerydslRepositorySupport {
-    /**
-     * Creates a new {@link QuerydslRepositorySupport} instance for the given domain type.
-     */
-    public UserRepositorySupport() {
+
+    private JPAQueryFactory jpaQueryFactory;
+
+    public UserRepositorySupport(JPAQueryFactory jpaQueryFactory) {
         super(User.class);
+
+        this.jpaQueryFactory = jpaQueryFactory;
     }
 }
