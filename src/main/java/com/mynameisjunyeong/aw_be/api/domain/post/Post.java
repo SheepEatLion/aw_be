@@ -21,8 +21,9 @@ import javax.persistence.*;
 public class Post extends BaseTimeEntity {
 
     @Id
+    @Column(name = "post_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long postSeq;
 
     @Column(nullable = false)
     private Long textLimit;

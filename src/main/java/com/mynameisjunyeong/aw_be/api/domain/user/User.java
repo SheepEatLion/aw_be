@@ -20,7 +20,7 @@ public class User extends BaseTimeEntity {
 
     @JsonIgnore
     @Id
-    @Column(name = "USER_SEQ")
+    @Column(name = "user_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userSeq;
 
@@ -30,7 +30,7 @@ public class User extends BaseTimeEntity {
     @Column(length = 100, nullable = false)
     private String name;
 
-    @Column(name = "ROLE_TYPE", length = 20, nullable = false)
+    @Column(name = "role_type", length = 20, nullable = false)
     @Enumerated(EnumType.STRING)
     private RoleType roleType;
 
