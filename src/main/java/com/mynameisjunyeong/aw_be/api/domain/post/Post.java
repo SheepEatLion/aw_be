@@ -28,9 +28,9 @@ public class Post extends BaseTimeEntity {
     @Column(nullable = false)
     private Long textLimit;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String author;
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String genre;
 }

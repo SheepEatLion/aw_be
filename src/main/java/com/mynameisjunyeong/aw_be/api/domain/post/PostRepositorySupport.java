@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 
-import static com.mynameisjunyeong.aw_be.domain.post.QPost.post;
+import static com.mynameisjunyeong.aw_be.api.domain.post.QPost.post;
 
 @Repository
 public class PostRepositorySupport extends QuerydslRepositorySupport {
@@ -21,7 +21,7 @@ public class PostRepositorySupport extends QuerydslRepositorySupport {
 
     public Long findPostId(String author, LocalDateTime createdDate, String genre){
         return jpaQueryFactory
-                .select(post.id)
+                .select(post.postSeq)
                 .from(post)
                 .where(
                         post.author.eq(author),
