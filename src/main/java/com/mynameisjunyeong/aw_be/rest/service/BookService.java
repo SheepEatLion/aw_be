@@ -1,11 +1,11 @@
-package com.mynameisjunyeong.aw_be.api.service;
+package com.mynameisjunyeong.aw_be.rest.service;
 
-import com.mynameisjunyeong.aw_be.api.domain.book.Book;
-import com.mynameisjunyeong.aw_be.api.domain.book.BookRepository;
-import com.mynameisjunyeong.aw_be.api.domain.book.BookRepositorySupport;
-import com.mynameisjunyeong.aw_be.api.domain.story.Story;
-import com.mynameisjunyeong.aw_be.api.domain.story.StoryRepository;
-import com.mynameisjunyeong.aw_be.api.domain.story.StoryRepositorySupport;
+import com.mynameisjunyeong.aw_be.rest.domain.book.Book;
+import com.mynameisjunyeong.aw_be.rest.domain.book.BookRepository;
+import com.mynameisjunyeong.aw_be.rest.domain.book.BookRepositorySupport;
+import com.mynameisjunyeong.aw_be.rest.domain.story.Story;
+import com.mynameisjunyeong.aw_be.rest.domain.story.StoryRepository;
+import com.mynameisjunyeong.aw_be.rest.domain.story.StoryRepositorySupport;
 import com.mynameisjunyeong.aw_be.dto.BookCreateDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

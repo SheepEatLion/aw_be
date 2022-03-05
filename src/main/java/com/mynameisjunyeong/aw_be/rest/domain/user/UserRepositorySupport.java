@@ -1,4 +1,4 @@
-package com.mynameisjunyeong.aw_be.api.domain.user;
+package com.mynameisjunyeong.aw_be.rest.domain.user;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;

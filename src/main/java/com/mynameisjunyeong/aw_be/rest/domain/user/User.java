@@ -1,8 +1,8 @@
-package com.mynameisjunyeong.aw_be.api.domain.user;
+package com.mynameisjunyeong.aw_be.rest.domain.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.mynameisjunyeong.aw_be.api.domain.BaseTimeEntity;
-import com.mynameisjunyeong.aw_be.oauth.entity.RoleType;
+import com.mynameisjunyeong.aw_be.rest.domain.BaseTimeEntity;
+import com.mynameisjunyeong.aw_be.util.RoleType;
 import lombok.*;
 
 import javax.persistence.*;

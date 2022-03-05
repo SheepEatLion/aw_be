@@ -1,9 +1,7 @@
-package com.mynameisjunyeong.aw_be.oauth.entity;
+package com.mynameisjunyeong.aw_be.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.util.Arrays;
 
 @Getter
 @AllArgsConstructor

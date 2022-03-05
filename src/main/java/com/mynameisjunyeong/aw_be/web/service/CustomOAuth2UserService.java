@@ -1,7 +1,7 @@
-package com.mynameisjunyeong.aw_be.oauth.service;
+package com.mynameisjunyeong.aw_be.web.service;
 
-import com.mynameisjunyeong.aw_be.api.domain.user.User;
-import com.mynameisjunyeong.aw_be.api.domain.user.UserRepository;
+import com.mynameisjunyeong.aw_be.rest.domain.user.User;
+import com.mynameisjunyeong.aw_be.rest.domain.user.UserRepository;
 import com.mynameisjunyeong.aw_be.dto.OAuthAttributes;
 import com.mynameisjunyeong.aw_be.dto.SessionUser;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.mynameisjunyeong.aw_be.api.domain.story;
+package com.mynameisjunyeong.aw_be.rest.domain.story;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;

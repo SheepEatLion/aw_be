@@ -1,7 +1,7 @@
 package com.mynameisjunyeong.aw_be.dto;
 
-import com.mynameisjunyeong.aw_be.api.domain.user.User;
-import com.mynameisjunyeong.aw_be.oauth.entity.RoleType;
+import com.mynameisjunyeong.aw_be.rest.domain.user.User;
+import com.mynameisjunyeong.aw_be.util.RoleType;
 import lombok.Builder;
 import lombok.Getter;
 

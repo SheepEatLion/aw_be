@@ -1,4 +1,4 @@
-package com.mynameisjunyeong.aw_be.api.domain;
+package com.mynameisjunyeong.aw_be.rest.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

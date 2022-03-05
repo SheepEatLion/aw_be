@@ -1,7 +1,7 @@
-package com.mynameisjunyeong.aw_be.api.restController;
+package com.mynameisjunyeong.aw_be.rest.restController;
 
 import com.mynameisjunyeong.aw_be.dto.BookCreateDto;
-import com.mynameisjunyeong.aw_be.api.service.BookService;
+import com.mynameisjunyeong.aw_be.rest.service.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.service.spi.ServiceException;

@@ -1,6 +1,6 @@
 package com.mynameisjunyeong.aw_be.dto;
 
-import com.mynameisjunyeong.aw_be.api.domain.user.User;
+import com.mynameisjunyeong.aw_be.rest.domain.user.User;
 import lombok.Getter;
 
 import java.io.Serializable;

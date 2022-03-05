@@ -1,4 +1,4 @@
-package com.mynameisjunyeong.aw_be.api.domain.book;
+package com.mynameisjunyeong.aw_be.rest.domain.book;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 
-import static com.mynameisjunyeong.aw_be.api.domain.book.QBook.book;
+import static com.mynameisjunyeong.aw_be.rest.domain.book.QBook.book;
 
 @Repository
 public class BookRepositorySupport extends QuerydslRepositorySupport {

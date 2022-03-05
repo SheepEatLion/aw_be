@@ -1,4 +1,4 @@
-package com.mynameisjunyeong.aw_be.api.domain.book;
+package com.mynameisjunyeong.aw_be.rest.domain.book;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

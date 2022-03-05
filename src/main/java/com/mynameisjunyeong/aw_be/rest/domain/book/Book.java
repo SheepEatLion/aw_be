@@ -1,7 +1,7 @@
-package com.mynameisjunyeong.aw_be.api.domain.book;
+package com.mynameisjunyeong.aw_be.rest.domain.book;
 
-import com.mynameisjunyeong.aw_be.api.domain.BaseTimeEntity;
-import com.mynameisjunyeong.aw_be.api.domain.story.Story;
+import com.mynameisjunyeong.aw_be.rest.domain.BaseTimeEntity;
+import com.mynameisjunyeong.aw_be.rest.domain.story.Story;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
