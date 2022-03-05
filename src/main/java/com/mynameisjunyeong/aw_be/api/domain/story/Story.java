@@ -1,6 +1,7 @@
 package com.mynameisjunyeong.aw_be.api.domain.story;
 
 import com.mynameisjunyeong.aw_be.api.domain.BaseTimeEntity;
+import com.mynameisjunyeong.aw_be.api.domain.book.Book;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -9,7 +10,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 /**
- * Story Entity
+ *  책 한권이 여러 스토리를 갖는 구조
+ *  Book 1 : N Story
+ *
  * @author junyeong
  */
 
@@ -24,8 +27,9 @@ public class Story extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, name = "post_id")
-    private Long postId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id")
+    private Book book;
 
     @Column(nullable = false)
     private String contents;
