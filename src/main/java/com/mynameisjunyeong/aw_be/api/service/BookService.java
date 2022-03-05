@@ -1,8 +1,8 @@
 package com.mynameisjunyeong.aw_be.api.service;
 
-import com.mynameisjunyeong.aw_be.api.domain.post.Post;
-import com.mynameisjunyeong.aw_be.api.domain.post.PostRepository;
-import com.mynameisjunyeong.aw_be.api.domain.post.PostRepositorySupport;
+import com.mynameisjunyeong.aw_be.api.domain.book.Book;
+import com.mynameisjunyeong.aw_be.api.domain.book.BookRepository;
+import com.mynameisjunyeong.aw_be.api.domain.book.BookRepositorySupport;
 import com.mynameisjunyeong.aw_be.api.domain.story.Story;
 import com.mynameisjunyeong.aw_be.api.domain.story.StoryRepository;
 import com.mynameisjunyeong.aw_be.api.domain.story.StoryRepositorySupport;
@@ -16,31 +16,31 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookService {
 
-    private final PostRepository postRepository;
+    private final BookRepository bookRepository;
     private final StoryRepository storyRepository;
-    private final PostRepositorySupport postRepositorySupport;
+    private final BookRepositorySupport bookRepositorySupport;
     private final StoryRepositorySupport storyRepositorySupport;
 
     public void create(BookCreateDto bookCreateDto){
 
         log.info("Book Create Dto: " + bookCreateDto.getTextLimit());
-        Post post = Post.builder()
+        Book post = Book.builder()
                 .author(bookCreateDto.getAuthor())
                 .genre(bookCreateDto.getGenre())
                 .textLimit(bookCreateDto.getTextLimit())
                 .build();
-        postRepository.save(post);
+        bookRepository.save(post);
 
-        Long postSeq = postRepositorySupport.findPostId(post.getAuthor(), post.getCreatedDate(), post.getGenre());
+        Long postId = bookRepositorySupport.findPostId(post.getAuthor(), post.getCreatedDate(), post.getGenre());
 
         Story story = Story.builder()
                 .author(post.getAuthor())
                 .contents(bookCreateDto.getContents())
-                .postSeq(postSeq)
+                .id(postId)
                 .build();
         storyRepository.save(story);
     }
-/*
+
     public void write(){
 
     }
@@ -60,5 +60,5 @@ public class BookService {
     public void delete(){
 
     }
-*/
+
 }

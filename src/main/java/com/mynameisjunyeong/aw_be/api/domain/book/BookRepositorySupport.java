@@ -1,4 +1,4 @@
-package com.mynameisjunyeong.aw_be.api.domain.post;
+package com.mynameisjunyeong.aw_be.api.domain.book;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
@@ -6,27 +6,27 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 
-import static com.mynameisjunyeong.aw_be.api.domain.post.QPost.post;
+import static com.mynameisjunyeong.aw_be.api.domain.book.QBook.book;
 
 @Repository
-public class PostRepositorySupport extends QuerydslRepositorySupport {
+public class BookRepositorySupport extends QuerydslRepositorySupport {
 
     @Autowired
     private final JPAQueryFactory jpaQueryFactory;
 
-    public PostRepositorySupport(JPAQueryFactory jpaQueryFactory){
-        super(Post.class);
+    public BookRepositorySupport(JPAQueryFactory jpaQueryFactory){
+        super(Book.class);
         this.jpaQueryFactory = jpaQueryFactory;
     }
 
     public Long findPostId(String author, LocalDateTime createdDate, String genre){
         return jpaQueryFactory
-                .select(post.postSeq)
-                .from(post)
+                .select(book.id)
+                .from(book)
                 .where(
-                        post.author.eq(author),
-                        post.createdDate.eq(createdDate),
-                        post.genre.eq(genre)
+                        book.author.eq(author),
+                        book.createdDate.eq(createdDate),
+                        book.genre.eq(genre)
                 )
                 .fetchOne();
     }

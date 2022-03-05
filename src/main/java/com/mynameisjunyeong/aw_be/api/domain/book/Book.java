@@ -1,4 +1,4 @@
-package com.mynameisjunyeong.aw_be.api.domain.post;
+package com.mynameisjunyeong.aw_be.api.domain.book;
 
 import com.mynameisjunyeong.aw_be.api.domain.BaseTimeEntity;
 import lombok.AllArgsConstructor;
@@ -18,12 +18,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Post extends BaseTimeEntity {
+public class Book extends BaseTimeEntity {
 
     @Id
-    @Column(name = "post_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long postSeq;
+    private Long id;
 
     @Column(nullable = false)
     private Long textLimit;

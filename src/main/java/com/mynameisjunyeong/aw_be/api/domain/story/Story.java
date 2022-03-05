@@ -21,12 +21,11 @@ import javax.persistence.*;
 public class Story extends BaseTimeEntity {
 
     @Id
-    @Column(name = "story_seq")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long storySeq;
+    private Long id;
 
-    @Column(nullable = false, name = "post_seq")
-    private Long postSeq;
+    @Column(nullable = false, name = "post_id")
+    private Long postId;
 
     @Column(nullable = false)
     private String contents;
