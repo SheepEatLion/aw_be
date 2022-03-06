@@ -40,6 +40,7 @@ public class BookService {
         return savedBook;
     }
 
+    @Transactional
     public Long write(String contents, Book book, String author){
         Long saveStoryId = 0L;
         try {
