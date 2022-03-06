@@ -1,5 +1,6 @@
 package com.mynameisjunyeong.aw_be.rest.service;
 
+import com.mynameisjunyeong.aw_be.dto.ReadBookRes;
 import com.mynameisjunyeong.aw_be.rest.domain.book.Book;
 import com.mynameisjunyeong.aw_be.rest.domain.book.BookRepository;
 import com.mynameisjunyeong.aw_be.rest.domain.book.BookRepositorySupport;
@@ -15,6 +16,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
+
 @Slf4j
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
@@ -27,11 +32,11 @@ public class BookService {
     private final StoryRepositorySupport storyRepositorySupport;
 
     @Transactional
-    public Book create(Long textLimit, String genre, String author){
+    public Book create(Long textLimit, String genre, String author, String title){
         Book savedBook = null;
 
         try {
-            Book book = Book.builder().textLimit(textLimit).author(author).genre(genre).build();
+            Book book = Book.builder().textLimit(textLimit).author(author).genre(genre).title(title).build();
             savedBook = bookRepository.save(book);
         } catch (Exception e) {
             LogUtil.errorLog(e);
@@ -55,7 +60,27 @@ public class BookService {
         return saveStoryId;
     }
 
-/*    public void read(){
+    // 단일 조회
+    public ReadBookRes read(Long bookId){
+        // 책 제목, 참여인원, 장르, 글자 수 제한, 각각 스토리들
+        ReadBookRes readBookRes = new ReadBookRes();
+        try {
+            Optional<Book> book = bookRepository.findById(bookId);
+            if(book.isPresent()){
+                List<Story> stories = storyRepository.findByBookOrderByCreatedDateAsc(book.get());
+                Long countStory = storyRepository.countByBook(book.get());  // 그냥 stories 에 length 구해도 될듯..?
+
+                readBookRes.setTitle(book.get().getTitle());
+                readBookRes.setGenre(book.get().getGenre());
+                readBookRes.setTextLimit(book.get().getTextLimit());
+                readBookRes.setParticipate(countStory);
+                readBookRes.setStories(stories);
+
+            }
+        } catch (Exception e) {
+            LogUtil.errorLog(e);
+        }
+        return readBookRes;
 
     }
 
@@ -69,6 +94,6 @@ public class BookService {
 
     public void delete(){
 
-    }*/
+    }
 
 }
