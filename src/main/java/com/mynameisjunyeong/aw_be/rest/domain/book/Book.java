@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -19,7 +20,6 @@ import java.util.List;
  */
 
 @Getter
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -39,5 +39,21 @@ public class Book extends BaseTimeEntity {
     private String genre;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
-    private List<Story> bookStory = new ArrayList<>();
+    private final List<Story> bookStory = new ArrayList<>();
+
+
+    /**
+     * 도메인 주도 설계 (도메인 비지니스 로직)
+     */
+    @Builder
+    public Book(Long textLimit, String author, String genre){
+        this.textLimit = textLimit;
+        this.author = author;
+        this.genre = genre;
+    }
+
+    public Book addStory(Story... stories){
+        this.bookStory.addAll(Arrays.asList(stories));
+        return this;
+    }
 }
