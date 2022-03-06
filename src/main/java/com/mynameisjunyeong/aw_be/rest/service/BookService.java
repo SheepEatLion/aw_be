@@ -7,11 +7,16 @@ import com.mynameisjunyeong.aw_be.rest.domain.story.Story;
 import com.mynameisjunyeong.aw_be.rest.domain.story.StoryRepository;
 import com.mynameisjunyeong.aw_be.rest.domain.story.StoryRepositorySupport;
 import com.mynameisjunyeong.aw_be.dto.BookCreateDto;
+import com.mynameisjunyeong.aw_be.util.CommonResponse;
+import com.mynameisjunyeong.aw_be.util.LogUtil;
+import com.mynameisjunyeong.aw_be.util.ResponseUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Slf4j
+@Transactional(readOnly = true)
 @RequiredArgsConstructor
 @Service
 public class BookService {
@@ -21,31 +26,35 @@ public class BookService {
     private final BookRepositorySupport bookRepositorySupport;
     private final StoryRepositorySupport storyRepositorySupport;
 
-    public void create(BookCreateDto bookCreateDto){
+    @Transactional
+    public Book create(Long textLimit, String genre, String author){
+        Book savedBook = null;
 
-        log.info("Book Create Dto: " + bookCreateDto.getTextLimit());
-        Book post = Book.builder()
-                .author(bookCreateDto.getAuthor())
-                .genre(bookCreateDto.getGenre())
-                .textLimit(bookCreateDto.getTextLimit())
-                .build();
-        bookRepository.save(post);
+        try {
+            Book book = Book.builder().textLimit(textLimit).author(author).genre(genre).build();
+            savedBook = bookRepository.save(book);
+        } catch (Exception e) {
+            LogUtil.errorLog(e);
+        }
 
-        Long postId = bookRepositorySupport.findPostId(post.getAuthor(), post.getCreatedDate(), post.getGenre());
-
-        Story story = Story.builder()
-                .author(post.getAuthor())
-                .contents(bookCreateDto.getContents())
-                .id(postId)
-                .build();
-        storyRepository.save(story);
+        return savedBook;
     }
 
-    public void write(){
+    public Long write(String contents, Book book, String author){
+        Long saveStoryId = 0L;
+        try {
+            Story story = Story.builder().book(book).author(author).contents(contents).build();
+            Story savedStory = storyRepository.save(story);
+            saveStoryId = savedStory.getId();
+            book.addStory(savedStory);
 
+        } catch (Exception e) {
+            LogUtil.errorLog(e);
+        }
+        return saveStoryId;
     }
 
-    public void read(){
+/*    public void read(){
 
     }
 
@@ -59,6 +68,6 @@ public class BookService {
 
     public void delete(){
 
-    }
+    }*/
 
 }
