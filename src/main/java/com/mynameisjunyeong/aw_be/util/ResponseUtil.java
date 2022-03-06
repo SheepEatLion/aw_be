@@ -41,6 +41,11 @@ public final class ResponseUtil {
         return response;
     }
 
+    public static CommonResponse failResponse(){
+        CommonResponse commonResponse = new CommonResponse();
+        failResponse(commonResponse);
+        return commonResponse;
+    }
 
     private static void successResponse(CommonResponse response){
         response.setSuccess(true);
