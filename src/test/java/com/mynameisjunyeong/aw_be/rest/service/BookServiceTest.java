@@ -25,9 +25,11 @@ class BookServiceTest {
         Long textLimit = 500L;
         String author = "junyeong";
         String genre = "comedy";
+        String title = "hello world~";
+        Long totalLimit = 1000L;
 
         // when
-        Book book = bookService.create(textLimit, genre, author);
+        Book book = bookService.create(textLimit, genre, author, title, totalLimit);
 
         // then
         assertEquals(book.getAuthor(), author);
@@ -41,7 +43,9 @@ class BookServiceTest {
         String contents = "이 이야기는 천년전 영국에서 출발하여....";
         String author = "junyeong";
         String genre = "comedy";
-        Book book = bookService.create(textLimit, genre, author);
+        String title = "hello world~";
+        Long totalLimit = 1000L;
+        Book book = bookService.create(textLimit, genre, author, title, totalLimit);
 
         // when
         Long storyId = bookService.write(contents, book, author);
