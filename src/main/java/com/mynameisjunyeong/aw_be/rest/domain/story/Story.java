@@ -36,15 +36,18 @@ public class Story extends BaseTimeEntity {
     @Column(nullable = false, length = 100)
     private String author;
 
+    @Column(nullable = false)
+    private Long storyLength;
 
     /**
      * 비지니스 로직
      */
 
     @Builder
-    public Story(Book book, String contents, String author){
+    public Story(Book book, String contents, String author, Long storyLength){
         this.book = book;
         this.contents = contents;
         this.author = author;
+        this.storyLength = storyLength;
     }
 }

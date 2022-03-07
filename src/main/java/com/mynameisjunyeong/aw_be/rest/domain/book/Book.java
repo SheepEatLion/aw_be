@@ -41,6 +41,12 @@ public class Book extends BaseTimeEntity {
     @Column(nullable = false)
     private String title;
 
+    @Column(nullable = false)
+    private Integer participate;
+
+    @Column(nullable = false)
+    private Long totalLimit;
+
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private final List<Story> bookStory = new ArrayList<>();
 
@@ -49,15 +55,27 @@ public class Book extends BaseTimeEntity {
      * 도메인 주도 설계 (도메인 비지니스 로직)
      */
     @Builder
-    public Book(Long textLimit, String author, String genre, String title){
+    public Book(Long textLimit, String author, String genre, String title, Long totalLimit, Integer participate){
         this.textLimit = textLimit;
         this.author = author;
         this.genre = genre;
         this.title = title;
+        this.totalLimit = totalLimit;
+        this.participate = participate;
     }
 
     public Book addStory(Story... stories){
         this.bookStory.addAll(Arrays.asList(stories));
         return this;
+    }
+
+    public Integer plusParticipate(){
+        this.participate += 1;
+        return this.participate;
+    }
+
+    public Integer minusParticipate(){
+        this.participate -= 1;
+        return this.participate;
     }
 }
