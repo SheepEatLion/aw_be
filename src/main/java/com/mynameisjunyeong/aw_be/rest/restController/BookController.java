@@ -28,7 +28,7 @@ public class BookController {
         LogUtil.inputLog(bookCreateDto);
         Long storyId = 0L;
         try {
-            Book book = bookService.create(bookCreateDto.getTextLimit(), bookCreateDto.getGenre(), bookCreateDto.getAuthor(), bookCreateDto.getTitle());
+            Book book = bookService.create(bookCreateDto.getTextLimit(), bookCreateDto.getGenre(), bookCreateDto.getAuthor(), bookCreateDto.getTitle(), bookCreateDto.getTotalLimit());
             storyId = bookService.write(bookCreateDto.getContents(), book, bookCreateDto.getAuthor());
         } catch (ServiceException se){
             log.error(se.getMessage());
@@ -40,7 +40,7 @@ public class BookController {
     @GetMapping("/{id}")
     public CommonResponse readBook(@PathVariable Long id){
         LogUtil.inputLog(id);
-        ReadBookRes result = new ReadBookRes();
+        ReadBookRes result;
         try {
             result = bookService.read(id);
         } catch (Exception e){
@@ -50,4 +50,16 @@ public class BookController {
 
         return ResponseUtil.singleResponse(result);
     }
+
+/*    @GetMapping("/list")
+    public CommonResponse readBooks(){
+
+        try {
+
+        } catch (Exception e) {
+            LogUtil.errorLog(e);
+            return ResponseUtil.failResponse();
+        }
+        return ResponseUtil.listResponse();
+    }*/
 }

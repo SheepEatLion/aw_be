@@ -14,5 +14,6 @@ public class BookCreateDto {
     private Long textLimit;     // book entity 의 textLimit 컬럼
     private String author;      // book entity 의 author 컬럼 + story entity 의 author 컬럼
     private String contents;    // story entity 의 contents 컬럼
+    private Long totalLimit;    // book entity 의 totalLimit 컬럼
 
 }

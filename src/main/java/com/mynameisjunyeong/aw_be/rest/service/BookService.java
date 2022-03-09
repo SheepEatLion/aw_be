@@ -32,11 +32,11 @@ public class BookService {
     private final StoryRepositorySupport storyRepositorySupport;
 
     @Transactional
-    public Book create(Long textLimit, String genre, String author, String title){
+    public Book create(Long textLimit, String genre, String author, String title, Long totalLimit){
         Book savedBook = null;
 
         try {
-            Book book = Book.builder().textLimit(textLimit).author(author).genre(genre).title(title).build();
+            Book book = Book.builder().textLimit(textLimit).author(author).genre(genre).title(title).totalLimit(totalLimit).build();
             savedBook = bookRepository.save(book);
         } catch (Exception e) {
             LogUtil.errorLog(e);
@@ -49,7 +49,7 @@ public class BookService {
     public Long write(String contents, Book book, String author){
         Long saveStoryId = 0L;
         try {
-            Story story = Story.builder().book(book).author(author).contents(contents).build();
+            Story story = Story.builder().book(book).author(author).contents(contents).storyLength((long) contents.length()).build();
             Story savedStory = storyRepository.save(story);
             saveStoryId = savedStory.getId();
             book.addStory(savedStory);
@@ -84,6 +84,7 @@ public class BookService {
 
     }
 
+    // 리스트 조회
     public void readAll(){
 
     }
