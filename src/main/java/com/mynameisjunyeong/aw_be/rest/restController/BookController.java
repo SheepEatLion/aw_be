@@ -2,6 +2,7 @@ package com.mynameisjunyeong.aw_be.rest.restController;
 
 import com.mynameisjunyeong.aw_be.dto.BookCreateDto;
 import com.mynameisjunyeong.aw_be.dto.ReadBookRes;
+import com.mynameisjunyeong.aw_be.dto.ReadBooksRes;
 import com.mynameisjunyeong.aw_be.rest.domain.book.Book;
 import com.mynameisjunyeong.aw_be.rest.service.BookService;
 import com.mynameisjunyeong.aw_be.util.CommonResponse;
@@ -14,6 +15,8 @@ import org.hibernate.service.spi.ServiceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -51,15 +54,15 @@ public class BookController {
         return ResponseUtil.singleResponse(result);
     }
 
-/*    @GetMapping("/list")
+    @GetMapping("/list")
     public CommonResponse readBooks(){
-
+        List<ReadBooksRes> result;
         try {
-
+            result = bookService.readAll();
         } catch (Exception e) {
             LogUtil.errorLog(e);
             return ResponseUtil.failResponse();
         }
-        return ResponseUtil.listResponse();
-    }*/
+        return ResponseUtil.listResponse(result);
+    }
 }

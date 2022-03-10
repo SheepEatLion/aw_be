@@ -1,6 +1,7 @@
 package com.mynameisjunyeong.aw_be.rest.service;
 
 import com.mynameisjunyeong.aw_be.dto.ReadBookRes;
+import com.mynameisjunyeong.aw_be.dto.ReadBooksRes;
 import com.mynameisjunyeong.aw_be.rest.domain.book.Book;
 import com.mynameisjunyeong.aw_be.rest.domain.book.BookRepository;
 import com.mynameisjunyeong.aw_be.rest.domain.book.BookRepositorySupport;
@@ -85,8 +86,8 @@ public class BookService {
     }
 
     // 리스트 조회
-    public void readAll(){
-
+    public List<ReadBooksRes> readAll(){
+        return storyRepositorySupport.findIdAndTitleAndContentsAndParticipateAndTotalLimitAndGenre();
     }
 
     public void update(){
